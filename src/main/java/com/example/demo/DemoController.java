@@ -21,4 +21,9 @@ public class DemoController {
         model.addAttribute("data5", " 매우 좋습니다.");
         return "hello2"; 
     }
+
+    @GetMapping("/about_detailed")
+    public String about() {
+        return "about_detailed";
+    }
 }
