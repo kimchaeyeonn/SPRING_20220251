@@ -12,4 +12,4 @@
 
 ## 3주차 - [포트폴리오 작성하기 완료](https://github.com/kimchaeyeonn/SPRING_20220251/commit/59345d4b0f63ced0f79f8f32e522392da3ce9588)
 
-## 3주차 연습문제 - []()
+## 3주차 연습문제 - [상세페이지 수정하기]()
