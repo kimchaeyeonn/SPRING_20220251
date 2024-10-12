@@ -122,6 +122,7 @@
   });
 })(jQuery);
 
+// 3주차 연습문제
 function confirmClose() {
   if (confirm("정말 창을 닫으시겠습니까?")) {
     window.close();

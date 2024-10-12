@@ -12,4 +12,6 @@
 
 ## 3주차 - [포트폴리오 작성하기 완료](https://github.com/kimchaeyeonn/SPRING_20220251/commit/59345d4b0f63ced0f79f8f32e522392da3ce9588)
 
-## 3주차 연습문제 - [상세페이지 수정하기]()
+## 3주차 연습문제 - [상세페이지 수정하기](https://github.com/kimchaeyeonn/SPRING_20220251/commit/61cd858f64318134be583812fbd2baa4ed8d1187#diff-fe53ce4ada47136de6ce568abb74abe59850265c40d5e36ff9cbb0b6f75ae59dR64)
+
+## 4주차 - [데이터베이스 연동 및 테스트]()
