@@ -12,7 +12,7 @@ import com.example.demo.model.service.TestService;
 public class DemoController {
 
     @Autowired
-        TestService testService;
+    TestService testService;
 
     @GetMapping("/hello") // 전송 방식 GET
     public String hello(Model model) {
