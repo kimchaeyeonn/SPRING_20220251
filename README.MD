@@ -18,4 +18,6 @@
 
 ## 4주차 연습문제 - [사용자 추가 및 출력하기](https://github.com/kimchaeyeonn/SPRING_20220251/commit/7631fa77b4efebd6164c5b5c48b22b5cddc0cce2)
 
-## 5주차 - [블로그 게시판 - 1]()
+## 5주차 - [블로그 게시판 - 1](https://github.com/kimchaeyeonn/SPRING_20220251/commit/d2bdcdfcdb1b4f3f1d08243e47f88f20b1fd93d4)
+
+## 5주차 연습문제 - [페이지 리다이렉트]()
