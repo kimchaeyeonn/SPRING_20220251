@@ -14,4 +14,6 @@
 
 ## 3주차 연습문제 - [상세페이지 수정하기](https://github.com/kimchaeyeonn/SPRING_20220251/commit/61cd858f64318134be583812fbd2baa4ed8d1187#diff-fe53ce4ada47136de6ce568abb74abe59850265c40d5e36ff9cbb0b6f75ae59dR64)
 
-## 4주차 - [데이터베이스 연동 및 테스트]()
+## 4주차 - [데이터베이스 연동 및 테스트](https://github.com/kimchaeyeonn/SPRING_20220251/commit/be4550b14dc75aa648e24d8845310386feb2592e)
+
+## 4주차 연습문제 - [사용자 추가 및 출력하기]()
