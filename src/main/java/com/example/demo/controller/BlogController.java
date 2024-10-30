@@ -84,7 +84,7 @@ public class BlogController {
     @ExceptionHandler(InvalidArticleIdException.class) 
     @ResponseStatus(HttpStatus.BAD_REQUEST) // 400 Bad Request 응답 상태 코드
     public String handleInvalidArticleIdException() {
-        return "/error_page/article_error"; 
+        return "/error_page/article_error2"; 
     }
 
     static class InvalidArticleIdException extends RuntimeException {
