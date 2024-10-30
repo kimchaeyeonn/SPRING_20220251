@@ -24,4 +24,4 @@
 
 ## 6주차 - [블로그 게시판 - 2](https://github.com/kimchaeyeonn/SPRING_20220251/commit/0aae63a46c178d8869c1de34e496fd51fbe3d2c1)
 
-## 6주차 연습문제 - [예외처리]()
+## 6주차 연습문제 - [예외처리](https://github.com/kimchaeyeonn/SPRING_20220251/commit/ae88769e7afcc2f96e9c2a14673b75a612ce37ea)
