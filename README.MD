@@ -22,4 +22,6 @@
 
 ## 5주차 연습문제 - [페이지 리다이렉트](https://github.com/kimchaeyeonn/SPRING_20220251/commit/25f45ce899f62f974afc3180cbf3c3110c41c544)
 
-## 6주차 - [블로그 게시판 - 2]()
+## 6주차 - [블로그 게시판 - 2](https://github.com/kimchaeyeonn/SPRING_20220251/commit/0aae63a46c178d8869c1de34e496fd51fbe3d2c1)
+
+## 6주차 연습문제 - [예외처리]()

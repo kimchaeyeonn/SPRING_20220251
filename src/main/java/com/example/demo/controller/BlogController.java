@@ -3,20 +3,25 @@ package com.example.demo.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 
 import com.example.demo.model.domain.Article;
 import com.example.demo.model.service.BlogService;
 import com.example.demo.model.service.AddArticleRequest;
 
 @Controller
+@ControllerAdvice // 6주차 연습문제
 public class BlogController {
 
     private final BlogService blogService;
@@ -43,8 +48,10 @@ public class BlogController {
     }
 
     @GetMapping("/article_edit/{id}") // 게시판 링크 지정
-    public String article_edit(Model model, @PathVariable Long id) {
-        Optional<Article> list = blogService.findById(id); // 선택한 게시판 글
+    public String article_edit(Model model, @PathVariable String id) {
+        try {
+        Long articleId = Long.parseLong(id); // 6주차 연습문제
+        Optional<Article> list = blogService.findById(articleId); // 선택한 게시판 글
         List<Article> articles = blogService.findAll(); // 모든 게시글 조회
 
         if (list.isPresent()) {
@@ -54,9 +61,12 @@ public class BlogController {
             // 처리할 로직 추가 (예: 오류 페이지로 리다이렉트, 예외 처리 등)
             return "/error_page/article_error"; // 오류 처리 페이지로 연결(이름 수정됨)
         }
+    // 6주차 연습문제
+    } catch (NumberFormatException e) {
+        throw new InvalidArticleIdException();
+    }
         return "article_edit"; // .HTML 연결
     }
-
 
     @PutMapping("/api/article_edit/{id}")
     public String updateArticle(@PathVariable Long id, @ModelAttribute AddArticleRequest request) {
@@ -68,5 +78,15 @@ public class BlogController {
     public String deleteArticle(@PathVariable Long id) {
         blogService.delete(id);
         return "redirect:/article_list";
+    }
+
+    // 6주차 연습문제
+    @ExceptionHandler(InvalidArticleIdException.class) 
+    @ResponseStatus(HttpStatus.BAD_REQUEST) // 400 Bad Request 응답 상태 코드
+    public String handleInvalidArticleIdException() {
+        return "/error_page/article_error"; 
+    }
+
+    static class InvalidArticleIdException extends RuntimeException {
     }
 }
