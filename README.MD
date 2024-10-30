@@ -26,6 +26,6 @@
 
 ## 6주차 연습문제 - [예외처리](https://github.com/kimchaeyeonn/SPRING_20220251/commit/ae88769e7afcc2f96e9c2a14673b75a612ce37ea)
 
-## 6주차 연습문제(수정) - [예외처리]()
+## 6주차 연습문제(수정) - [예외처리](https://github.com/kimchaeyeonn/SPRING_20220251/commit/97d264cd369388a9a6b54ad05afca4cd9e48205b)
 
-## 중간 범위 - [추가 구현]()
+## 중간범위 추가 구현사항 - [1. 게시글 작성자 추가하기]()

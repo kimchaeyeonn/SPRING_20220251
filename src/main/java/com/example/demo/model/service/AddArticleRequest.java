@@ -9,10 +9,12 @@ import com.example.demo.model.domain.Article;
 public class AddArticleRequest {
     private String title;
     private String content;
+    private String author; // 추가구현1 - 작성자
     public Article toEntity(){ // Article 객체 생성
         return Article.builder()
             .title(title)
             .content(content)
+            .author(content) // 추가구현1 - 작성자
             .build();
     }
 }

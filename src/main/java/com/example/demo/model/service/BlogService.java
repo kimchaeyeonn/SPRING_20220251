@@ -26,7 +26,15 @@ public class BlogService {
         // .title(title)
         // .content(content)
         // .build();
-        return blogRepository.save(request.toEntity());
+
+        // 추가구현1 - 작성자
+        Article article = Article.builder()
+            .title(request.getTitle())
+            .content(request.getContent())
+            .author(request.getAuthor()) // 작성자 정보 추가
+            .build();
+        //return blogRepository.save(request.toEntity());
+        return blogRepository.save(article);
     }
 
     public Optional<Article> findById(Long id) { // 게시판 특정 글 조회
@@ -37,6 +45,7 @@ public class BlogService {
             Optional<Article> optionalArticle = blogRepository.findById(id); // 단일 글 조회
             optionalArticle.ifPresent(article -> { // 값이 있으면
                 article.update(request.getTitle(), request.getContent()); // 값을 수정
+                article.updateAuthor(request.getAuthor()); // 추가구현1 - 작성자
                 blogRepository.save(article); // Article 객체에 저장
             });
         }
