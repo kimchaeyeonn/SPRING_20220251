@@ -31,7 +31,9 @@
 ## 중간범위 추가 구현사항 - [1. 게시글 작성자 추가하기](https://github.com/kimchaeyeonn/SPRING_20220251/commit/e36561ecbe474e40d60576e371043e62691fb44e)
 <img width="1130" alt="articlepost_author" src="https://github.com/user-attachments/assets/23640ef5-f851-4875-b5b2-1a83ac7931db">
 ✔︎ 게시글 추가 페이지에 작성자 칸이 생김
+
 <img width="1117" alt="articlelist_author" src="https://github.com/user-attachments/assets/976ac38e-52c9-4c66-9a6c-01ab414fe01c">
 ✔︎ 게시글 조회할 때 작성자 칸이 생김
+
 <img width="1113" alt="articleupdate_author" src="https://github.com/user-attachments/assets/24434be1-3e2f-4c9f-815e-129991029475">
 ✔︎ 게시글 수정할 때 작성자도 수정 가능함
