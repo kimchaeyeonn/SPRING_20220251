@@ -49,7 +49,7 @@
   - 사용자 추가 및 출력하기
     <img width="338" alt="4주차 연습문제" src="https://github.com/user-attachments/assets/0305d99c-924b-4ea7-9cd6-fcde43af3e46">
 
-## 5주차 - [블로그 게시판 - 1](https://github.com/kimchaeyeonn/SPRING_20220251/commit/d2bdcdfcdb1b4f3f1d08243e47f88f20b1fd93d4)
+## 5주차 - [블로그 게시판(1)](https://github.com/kimchaeyeonn/SPRING_20220251/commit/d2bdcdfcdb1b4f3f1d08243e47f88f20b1fd93d4)
 
 - 5주차 수업 내용
   - 블로그 게시판 조회, 글쓰기 기능 구현
@@ -62,7 +62,7 @@
   - 페이지 리다이렉트
     <img width="561" alt="5주차 연습문제" src="https://github.com/user-attachments/assets/4ae84b97-9cc5-4f5c-b006-62d53ecd2385">
 
-## 6주차 - [블로그 게시판 - 2](https://github.com/kimchaeyeonn/SPRING_20220251/commit/0aae63a46c178d8869c1de34e496fd51fbe3d2c1)
+## 6주차 - [블로그 게시판(2)](https://github.com/kimchaeyeonn/SPRING_20220251/commit/0aae63a46c178d8869c1de34e496fd51fbe3d2c1)
 
 - 6주차 수업 내용
   - 게시글 수정, 삭제 기능 구현
@@ -92,3 +92,14 @@
 
 - 게시글 수정할 때 작성자 기능도 수정 가능함
   <img width="1300" alt="articleupdate_author" src="https://github.com/user-attachments/assets/24434be1-3e2f-4c9f-815e-129991029475">
+
+## 7주차 - [블로그 게시판(3)]()
+
+- 7주차 수업 내용
+  - 프로필 이미지 변경하기
+  - 게시글 board 수정, 삭제, 조회
+    <img width="1370" alt="boardlist" src="https://github.com/user-attachments/assets/4de14726-aef1-43ea-bd0e-9a99020b4498">
+    <img width="1336" alt="boardview" src="https://github.com/user-attachments/assets/899ae15d-df65-449f-99df-3c8332641e58">
+    <img width="1363" alt="boardedit" src="https://github.com/user-attachments/assets/145f7cc7-d94d-4f37-9150-6e27b6074edc">
+    <img width="1313" alt="boardeditlist" src="https://github.com/user-attachments/assets/3b34cff4-ba30-47ae-bf08-62c7a54dcd1d">
+    <img width="1324" alt="boarddelete" src="https://github.com/user-attachments/assets/2360204e-c2c8-4e33-b254-49d120a44b00">
