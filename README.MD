@@ -114,10 +114,9 @@
   - 게시글 목록
     <img width="1337" alt="boardview" src="https://github.com/user-attachments/assets/33b5d14c-0b8f-463f-a233-fc9afb84874c">
 
-## 8주차 - [블로그 게시판(4)]()
+## 8주차 - [블로그 게시판(4)](https://github.com/kimchaeyeonn/SPRING_20220251/commit/1c2ec43326be1208c2ee15ccd72c2897e1fd9a3e)
 
 - 8주차 수업 내용
-
   - 글쓰기 기능 버튼
     <img width="1326" alt="boardlist-1" src="https://github.com/user-attachments/assets/d3fa1998-9cfa-440f-9060-2c5b2dc2d60b">
     <img width="1320" alt="boardlist-2" src="https://github.com/user-attachments/assets/2f773d63-63a7-4be1-9e35-25836238d7c3">
@@ -126,3 +125,11 @@
     <img width="1329" alt="boardwritelist" src="https://github.com/user-attachments/assets/1ee6401a-5750-4945-95f6-02d7d4bd0a03">
   - 검색창과 페이징 기능
     <img width="1356" alt="search" src="https://github.com/user-attachments/assets/acf742f3-9b2b-42b7-9d6b-bedd1880eaa6">
+
+## 8주차 연습문제 - [게시판 글번호 출력 수정]()
+
+- 8주차 연습문제
+  - ID를 글번호로 조회되게 변경
+    <img width="1303" alt="boardlist" src="https://github.com/user-attachments/assets/41b043e0-c19d-48b6-aa90-34b27c7e10e9">
+  - 글을 삭제해도 글번호에 맞게 조회됨
+    <img width="1323" alt="boardlist_delete" src="https://github.com/user-attachments/assets/2ce11aa2-9992-4ad5-8fbf-e544193546f9">

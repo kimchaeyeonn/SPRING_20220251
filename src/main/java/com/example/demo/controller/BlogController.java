@@ -102,22 +102,50 @@ public class BlogController {
         return "redirect:/board_list"; // .HTML 연결
     }
 
-    @GetMapping("/board_list") // 새로운 게시판 링크 지정
-    public String board_list(Model model, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "") String keyword) {
-        PageRequest pageable = PageRequest.of(page, 3); // 한 페이지의 게시글 수
-        Page<Board> list; // Page를 반환
+    // @GetMapping("/board_list") // 새로운 게시판 링크 지정
+    // public String board_list(Model model, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "") String keyword) {
+    //     PageRequest pageable = PageRequest.of(page, 3); // 한 페이지의 게시글 수
+    //     Page<Board> list; // Page를 반환
         
+    //     if (keyword.isEmpty()) {
+    //         list = blogService.findAll(pageable); // 기본 전체 출력(키워드 x)
+    //     } else {    
+    //         list = blogService.searchByKeyword(keyword, pageable); // 키워드로 검색
+    //     }
+    //     model.addAttribute("boards", list); // 모델에 추가
+    //     model.addAttribute("totalPages", list.getTotalPages()); // 페이지 크기
+    //     model.addAttribute("currentPage", page); // 페이지 번호
+    //     model.addAttribute("keyword", keyword); // 키워드
+    //     return "board_list"; // .HTML 연결
+    // }
+
+    // 8주차 연습문제
+    @GetMapping("/board_list")
+    public String board_list(Model model,
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "") String keyword) {
+        int pageSize = 3; // 페이지당 게시글 수
+        PageRequest pageable = PageRequest.of(page, pageSize);
+        Page < Board > list;
+
         if (keyword.isEmpty()) {
-            list = blogService.findAll(pageable); // 기본 전체 출력(키워드 x)
-        } else {    
-            list = blogService.searchByKeyword(keyword, pageable); // 키워드로 검색
+            list = blogService.findAll(pageable);
+        } else {
+            list = blogService.searchByKeyword(keyword, pageable);
         }
-        model.addAttribute("boards", list); // 모델에 추가
-        model.addAttribute("totalPages", list.getTotalPages()); // 페이지 크기
-        model.addAttribute("currentPage", page); // 페이지 번호
-        model.addAttribute("keyword", keyword); // 키워드
-        return "board_list"; // .HTML 연결
+
+        // 시작 번호 계산
+        int startNum = (page * pageSize) + 1;
+
+        model.addAttribute("boards", list);
+        model.addAttribute("totalPages", list.getTotalPages());
+        model.addAttribute("currentPage", page);
+        model.addAttribute("keyword", keyword);
+        model.addAttribute("startNum", startNum); // 추가된 부분
+
+        return "board_list";
     }
+
 
     // 게시판 리스트를 처리하는 메소드
     // @GetMapping("/article_list") // 게시판 링크 지정

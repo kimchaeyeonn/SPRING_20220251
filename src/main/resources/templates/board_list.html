@@ -33,7 +33,8 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>ID</th>
+              <!-- <th>ID</th> -->
+              <th>글번호</th>
               <th>제목</th>
               <th>작성자</th>
               <!-- 추가구현1 - 작성자 -->
@@ -43,9 +44,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr th:each="board : ${boards}">
-              <td th:text="${board.id}"></td>
-              <!-- <td th:text="${article.author}"></td> 추가구현1 - 작성자 -->
+            <!-- <tr th:each="board : ${boards}">
+              <td th:text="${board.id}"></td> -->
+            <!-- <td th:text="${article.author}"></td> 추가구현1 - 작성자 -->
+            <!-- <td> -->
+            <!-- 8주차 연습문제 -->
+            <tr th:each="board, iterStat : ${boards}">
+              <!-- 글 번호 계산: (현재 페이지 * 페이지 크기) + index + 1 -->
+              <td th:text="${currentPage * 3 + iterStat.index + 1}"></td>
               <td>
                 <a th:href="@{/board_view/{id}(id=${board.id})}">
                   <span th:text="${board.title}"></span>
