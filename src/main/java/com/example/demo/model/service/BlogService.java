@@ -10,6 +10,9 @@ import com.example.demo.model.domain.Board;
 // import com.example.demo.model.repository.BlogRepository;
 import com.example.demo.model.repository.BoardRepository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -53,18 +56,25 @@ public class BlogService {
         }
     
     public Board save(AddArticleRequest request) {
-        Board board = Board.builder()
-            .title(request.getTitle())
-            .content(request.getContent())
-            // 7주차 연습문제
-            .user(request.getUser())
-            .newdate(request.getNewdate())
-            .count(request.getCount())
-            .likec(request.getLikec())
-            .build();
-        // return boardRepository.save(request.toEntity());
-        return boardRepository.save(board);
+        // Board board = Board.builder()
+        //     .title(request.getTitle())
+        //     .content(request.getContent())
+        //     // 7주차 연습문제
+        //     .user(request.getUser())
+        //     .newdate(request.getNewdate())
+        //     .count(request.getCount())
+        //     .likec(request.getLikec())
+        //     .build();
+        return boardRepository.save(request.toEntity());
+        // return boardRepository.save(board);
     }
+
+    public Page<Board> findAll(Pageable pageable) {
+        return boardRepository.findAll(pageable);
+        }
+        public Page<Board> searchByKeyword(String keyword, Pageable pageable) {
+        return boardRepository.findByTitleContainingIgnoreCase(keyword, pageable);
+        } // LIKE 검색 제공(대소문자 무시)
 
     // public Article save(AddArticleRequest request){
         // DTO가 없는 경우 이곳에 직접 구현 가능

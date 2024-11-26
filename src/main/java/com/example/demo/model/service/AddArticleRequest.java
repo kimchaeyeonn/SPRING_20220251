@@ -1,5 +1,7 @@
 package com.example.demo.model.service;
 
+import com.example.demo.model.domain.Board;
+
 import lombok.*; // 어노테이션 자동 생성
 // import com.example.demo.model.domain.Article;
 
@@ -13,6 +15,17 @@ public class AddArticleRequest {
     private String newdate;
     private String count;
     private String likec;
+
+    public Board toEntity(){ // Board 생성자를 통해 객체 생성
+        return Board.builder()
+            .title(title)
+            .content(content)
+            .user(user)
+            .newdate(newdate)
+            .count(count)
+            .likec(likec)
+            .build();
+    }
     // private String author; // 추가구현1 - 작성자
     // public Article toEntity(){ // Article 객체 생성
     //     return Article.builder()

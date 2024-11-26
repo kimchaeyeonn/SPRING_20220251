@@ -102,7 +102,7 @@
     <img width="1370" alt="boardlist" src="https://github.com/user-attachments/assets/4de14726-aef1-43ea-bd0e-9a99020b4498">
     <img width="1336" alt="boardview" src="https://github.com/user-attachments/assets/899ae15d-df65-449f-99df-3c8332641e58">
 
-## 7주차 연습문제 - [게시글 수정, 삭제기능]()
+## 7주차 연습문제 - [게시글 수정, 삭제기능](https://github.com/kimchaeyeonn/SPRING_20220251/commit/a4119c7c740720348c7dac7b4aa6bfcf2e5b827e)
 
 - 7주차 연습문제
   - 게시글 수정
@@ -113,3 +113,16 @@
       <img width="1339" alt="boarddelete" src="https://github.com/user-attachments/assets/2e5a9919-c8b0-495c-89b5-a392042a4694">
   - 게시글 목록
     <img width="1337" alt="boardview" src="https://github.com/user-attachments/assets/33b5d14c-0b8f-463f-a233-fc9afb84874c">
+
+## 8주차 - [블로그 게시판(4)]()
+
+- 8주차 수업 내용
+
+  - 글쓰기 기능 버튼
+    <img width="1326" alt="boardlist-1" src="https://github.com/user-attachments/assets/d3fa1998-9cfa-440f-9060-2c5b2dc2d60b">
+    <img width="1320" alt="boardlist-2" src="https://github.com/user-attachments/assets/2f773d63-63a7-4be1-9e35-25836238d7c3">
+  - 글쓰기 기능 저장
+    <img width="1330" alt="boardwrite-1" src="https://github.com/user-attachments/assets/d27dab01-01a0-4167-9f84-1da1b6c8e789">
+    <img width="1329" alt="boardwritelist" src="https://github.com/user-attachments/assets/1ee6401a-5750-4945-95f6-02d7d4bd0a03">
+  - 검색창과 페이징 기능
+    <img width="1356" alt="search" src="https://github.com/user-attachments/assets/acf742f3-9b2b-42b7-9d6b-bedd1880eaa6">
