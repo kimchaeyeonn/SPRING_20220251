@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 // import com.example.demo.model.domain.Article;
 import com.example.demo.model.domain.Board;
 import com.example.demo.model.service.BlogService;
-// import com.example.demo.model.service.AddArticleRequest;
-import com.example.demo.model.service.AddBoardRequest;
+import com.example.demo.model.service.AddArticleRequest;
+
 
 @Controller
 @ControllerAdvice // 6주차 연습문제
@@ -48,10 +48,11 @@ public class BlogController {
             model.addAttribute("boards", list.get()); // 존재할 경우 실제 Article 객체를 모델에 추가
         } else {
             // 처리할 로직 추가 (예: 오류 페이지로 리다이렉트, 예외 처리 등)
-            // return "/error_page/article_error"; // 오류 처리 페이지로 연결
+            return "/error_page/article_error"; // 오류 처리 페이지로 연결
         }
         return "board_view"; // .HTML 연결
     }
+    // 7주차 연습문제
    @GetMapping("/board_edit/{id}") // 게시판 링크 지정
     public String article_edit(Model model, @PathVariable String id) {
         try {
@@ -73,8 +74,9 @@ public class BlogController {
         return "board_edit"; // .HTML 연결
     }
     
+    // 7주차 연습문제
     @PutMapping("/api/board_edit/{id}")
-    public String updateBoard(@PathVariable Long id, @ModelAttribute AddBoardRequest request) {
+    public String updateBoard(@PathVariable Long id, @ModelAttribute AddArticleRequest request) {
         blogService.update(id, request);
         return "redirect:/board_list"; // 글 수정 이후 .html 연결
     }

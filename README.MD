@@ -93,13 +93,23 @@
 - 게시글 수정할 때 작성자 기능도 수정 가능함
   <img width="1300" alt="articleupdate_author" src="https://github.com/user-attachments/assets/24434be1-3e2f-4c9f-815e-129991029475">
 
-## 7주차 - [블로그 게시판(3)]()
+## 7주차 - [블로그 게시판(3)](https://github.com/kimchaeyeonn/SPRING_20220251/commit/543df5ffad59d47489959d3771be567e5e0b56f1)
 
 - 7주차 수업 내용
   - 프로필 이미지 변경하기
-  - 게시글 board 수정, 삭제, 조회
+    <img width="1498" alt="프로필 이미지변경" src="https://github.com/user-attachments/assets/aeb0565a-2ad4-4a5f-a2d3-9335bf84e9d6">
+  - 게시글 board 조회
     <img width="1370" alt="boardlist" src="https://github.com/user-attachments/assets/4de14726-aef1-43ea-bd0e-9a99020b4498">
     <img width="1336" alt="boardview" src="https://github.com/user-attachments/assets/899ae15d-df65-449f-99df-3c8332641e58">
-    <img width="1363" alt="boardedit" src="https://github.com/user-attachments/assets/145f7cc7-d94d-4f37-9150-6e27b6074edc">
-    <img width="1313" alt="boardeditlist" src="https://github.com/user-attachments/assets/3b34cff4-ba30-47ae-bf08-62c7a54dcd1d">
-    <img width="1324" alt="boarddelete" src="https://github.com/user-attachments/assets/2360204e-c2c8-4e33-b254-49d120a44b00">
+
+## 7주차 연습문제 - [게시글 수정, 삭제기능]()
+
+- 7주차 연습문제
+  - 게시글 수정
+    <img width="1353" alt="boardedit" src="https://github.com/user-attachments/assets/db88aa9d-985b-4482-841a-81f2fdce6210">
+    <img width="1322" alt="boardeditlist" src="https://github.com/user-attachments/assets/af05be03-bae3-47e7-b83c-807c260a0b60">
+  - 게시글 삭제
+    - 삭제 버튼을 이용하여 ID가 3인 게시글을 지움
+      <img width="1339" alt="boarddelete" src="https://github.com/user-attachments/assets/2e5a9919-c8b0-495c-89b5-a392042a4694">
+  - 게시글 목록
+    <img width="1337" alt="boardview" src="https://github.com/user-attachments/assets/33b5d14c-0b8f-463f-a233-fc9afb84874c">

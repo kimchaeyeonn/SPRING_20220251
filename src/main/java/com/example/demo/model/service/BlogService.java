@@ -28,13 +28,22 @@ public class BlogService {
         return boardRepository.findAll();
     }
 
+    // 7주차 연습문제
     public Optional<Board> findById(Long id) { // 게시판 특정 글 조회
         return boardRepository.findById(id);
     }
-        public void update(Long id, AddBoardRequest request) {
+        public void update(Long id, AddArticleRequest request) {
             Optional<Board> optionalBoard = boardRepository.findById(id); // 단일 글 조회
             optionalBoard.ifPresent(board -> { // 값이 있으면
-                board.update(request.getTitle(), request.getContent()); // 값을 수정
+                board.update(
+                request.getTitle(), 
+                request.getContent(),
+                // 7주차 연습문제
+                request.getUser(),
+                request.getNewdate(),
+                request.getCount(),
+                request.getLikec()
+                ); // 값을 수정
                 boardRepository.save(board); // Board 객체에 저장
             });
         }
@@ -43,10 +52,15 @@ public class BlogService {
             boardRepository.deleteById(id);
         }
     
-    public Board save(AddBoardRequest request) {
+    public Board save(AddArticleRequest request) {
         Board board = Board.builder()
             .title(request.getTitle())
             .content(request.getContent())
+            // 7주차 연습문제
+            .user(request.getUser())
+            .newdate(request.getNewdate())
+            .count(request.getCount())
+            .likec(request.getLikec())
             .build();
         // return boardRepository.save(request.toEntity());
         return boardRepository.save(board);
