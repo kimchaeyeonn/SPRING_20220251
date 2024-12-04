@@ -145,10 +145,43 @@
   - 로그인 검증 확인
     <img width="1374" alt="비번 일치안함" src="https://github.com/user-attachments/assets/2aa35ac4-bb22-4e4c-bd8d-eb3bba33f923">
 
-## 9주차 연습문제 - [입력값 필터링]()
+## 9주차 연습문제 - [입력값 필터링](https://github.com/kimchaeyeonn/SPRING_20220251/commit/fbd272fa3772f20073e0c8abc00a1c81097ee74f)
 
 - 9주차 연습문제
-    - 회원가입 했을때
+  - 회원가입 할 때 조건에 어긋나는 값 입력
     <img width="1414" alt="회원가입" src="https://github.com/user-attachments/assets/e27cf77a-8fda-406a-8a30-12a67ff946cc">
-    - 입력값 필터링 되어서 에러 발생
+  - 입력값 필터링 되어서 에러 발생
     <img width="1497" alt="에러" src="https://github.com/user-attachments/assets/a3e9203a-1a71-4c44-8322-a70cda8ef51e">
+
+## 10주차 - [로그인과 로그아웃]()
+
+- 10주차 수업 내용
+  - 나의 프로젝트 팀원 이미지 변경
+    <img width="1285" alt="프로젝트 팀원 이미지" src="https://github.com/user-attachments/assets/a0ed5de4-3865-4ff7-b162-a581472fc83e">
+  - 직접 연락하기 버튼 클릭 시 메일 보내기
+    <img width="835" alt="이메일" src="https://github.com/user-attachments/assets/9208d58a-0cda-44f9-b985-07b9e5f90442">
+  - 명언과 인물 사진 추가
+    <img width="1492" alt="추천인" src="https://github.com/user-attachments/assets/c9e2337c-11c8-4a50-894c-84d4bad7b12e">
+  - BlogController.java 기존 게시판 맵핑 수정
+  - 고유 세션 ID 생성
+    <img width="423" alt="blogcontroller 수정" src="https://github.com/user-attachments/assets/d688087e-db5f-4aa9-8c22-5de121ad232f">
+  - 로그인 후 게시판에 사용자 환영합니다 출력
+    <img width="1502" alt="로그인 후 환영합니다" src="https://github.com/user-attachments/assets/84e0913a-ffd4-441c-9f99-db504b9bfe43">
+  - 로그아웃 후 로그인 진행시 세션값 변경되는지 확인
+    <img width="554" alt="로그인 후 세션" src="https://github.com/user-attachments/assets/4986b52b-7990-4906-8031-7e8123b2d654">
+    <img width="1506" alt="로그인 후 세션2" src="https://github.com/user-attachments/assets/46480941-4b21-4717-b234-7b793fadf44a">
+  - 로그아웃 후 로컬 세션 아이디와 서버 족 세션 값이 다른 것을 확인
+    <img width="549" alt="로그아웃 후 세션 Null" src="https://github.com/user-attachments/assets/9b6aa16a-e378-4d48-b83a-e6cfb3c0d171">
+  - 세션에 보안 기능 추가
+    <img width="1500" alt="세션보안 csrf" src="https://github.com/user-attachments/assets/652944c2-7b0c-4fb1-9d75-3bbd923f3aa5">
+  - 300초 = 5분, 쿠키 https 전송 활성화
+    <img width="1281" alt="세션보안 보안접속" src="https://github.com/user-attachments/assets/4107f2be-52fa-4d4d-8bec-987d43d2f2c9">
+
+## 10주차 연습문제 - []()
+- 10주차 연습문제
+
+## 11주차 - []()
+- 11주차 수업 내용
+
+## 11주차 연습문제 - []()
+- 11주차 연습문제
