@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import com.example.demo.model.domain.Board;
 import com.example.demo.model.service.BlogService;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 import com.example.demo.model.service.AddArticleRequest;
@@ -48,17 +49,24 @@ public class BlogController {
     // }
 
     @GetMapping("/board_view/{id}") // 게시판 링크 지정
-    public String board_view(Model model, @PathVariable Long id) {
+    public String board_view(Model model, @PathVariable Long id, HttpSession session) {
         Optional<Board> list = blogService.findById(id); // 선택한 게시판 글
-        
+
         if (list.isPresent()) {
-            model.addAttribute("boards", list.get()); // 존재할 경우 실제 Article 객체를 모델에 추가
+            Board board = list.get();
+            model.addAttribute("boards", board); // 존재할 경우 실제 Article 객체를 모델에 추가
+
+            // 10주차 연습문제
+            String userId = (String) session.getAttribute("userId"); // 로그인된 사용자 아이디
+            model.addAttribute("canEdit", userId != null && userId.equals(board.getUser())); // 작성자만 수정 가능
+            model.addAttribute("canDelete", userId != null && userId.equals(board.getUser())); // 작성자만 삭제 가능
         } else {
             // 처리할 로직 추가 (예: 오류 페이지로 리다이렉트, 예외 처리 등)
             return "/error_page/article_error"; // 오류 처리 페이지로 연결
         }
         return "board_view"; // .HTML 연결
     }
+
     // 7주차 연습문제
    @GetMapping("/board_edit/{id}") // 게시판 링크 지정
     public String article_edit(Model model, @PathVariable String id) {
@@ -94,13 +102,35 @@ public class BlogController {
         return "redirect:/board_list";
     }
 
+    // @GetMapping("/board_write")
+    // public String board_write() {
+    //     return "board_write";
+    // }
+
+    // 10주차 연습문제
     @GetMapping("/board_write")
-    public String board_write() {
-        return "board_write";
+    public String board_write(HttpServletRequest request, Model model) {
+        // 세션에서 사용자 이름 가져오기
+        HttpSession session = request.getSession(false); // 기존 세션 가져오기
+        if (session != null) {
+            String userName = (String) session.getAttribute("name"); // 세션에서 이름 가져오기
+    
+            // 이름을 모델에 추가하여 Thymeleaf에서 사용할 수 있도록 설정
+            model.addAttribute("name", userName);
+        }
+    
+        return "board_write"; // .HTML 연결
     }
 
+    // 10주차 연습문제
     @PostMapping("/api/boards") // 글쓰기 게시판 저장
-    public String addboards(@ModelAttribute AddArticleRequest request) {
+    public String addboards(@ModelAttribute AddArticleRequest request, HttpSession session) {
+        String userName = (String) session.getAttribute("userName"); // 세션에서 사용자 ID를 가져옴
+        if (userName != null) {
+            request.setUser(userName); // 작성자로 로그인한 사용자 설정
+        } else {
+            request.setUser("GUEST"); // 로그인되지 않은 경우 GUEST로 설정
+        }
         blogService.save(request);
         return "redirect:/board_list"; // .HTML 연결
     }
@@ -146,7 +176,7 @@ public class BlogController {
             } else {
                 list = blogService.searchByKeyword(keyword, pageable);
             }
-            // 8주차 연습문제 시작 번호 계산
+            // 8주차 연습문제 - 시작 번호 계산
             int startNum = (page * pageSize) + 1;
 
             model.addAttribute("boards", list);

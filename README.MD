@@ -153,7 +153,7 @@
   - 입력값 필터링 되어서 에러 발생
     <img width="1497" alt="에러" src="https://github.com/user-attachments/assets/a3e9203a-1a71-4c44-8322-a70cda8ef51e">
 
-## 10주차 - [로그인과 로그아웃]()
+## 10주차 - [로그인과 로그아웃](https://github.com/kimchaeyeonn/SPRING_20220251/commit/3993a023bcb7d551209352cb097e08dddf60b012)
 
 - 10주차 수업 내용
   - 나의 프로젝트 팀원 이미지 변경
@@ -177,11 +177,19 @@
   - 300초 = 5분, 쿠키 https 전송 활성화
     <img width="1281" alt="세션보안 보안접속" src="https://github.com/user-attachments/assets/4107f2be-52fa-4d4d-8bec-987d43d2f2c9">
 
-## 10주차 연습문제 - []()
+## 10주차 연습문제 - [게시판 수정하기]()
+
 - 10주차 연습문제
+  - 현재 로그인한 사용자로 작성자 저장
+    <img width="1500" alt="로그인후 list" src="https://github.com/user-attachments/assets/192c30b8-6b11-46e3-989b-c8135805aebd">
+  - 글의 작성자만 수정/삭제 버튼 접근 가능
+    <img width="1310" alt="버튼보임" src="https://github.com/user-attachments/assets/c343feb2-2f5d-47ea-b834-08fc1ad99da5">
+    <img width="1308" alt="버튼안보임" src="https://github.com/user-attachments/assets/294d850f-4c5d-40c1-aaa9-ac6873aaf0d9">
 
 ## 11주차 - []()
+
 - 11주차 수업 내용
 
 ## 11주차 연습문제 - []()
+
 - 11주차 연습문제

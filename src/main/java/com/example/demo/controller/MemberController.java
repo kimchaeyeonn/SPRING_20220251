@@ -56,8 +56,12 @@ public class MemberController {
 
             String sessionId = UUID.randomUUID().toString(); // 임의의 고유 ID로 세션 생성
             String email = request.getEmail(); // 이메일 얻기
+            // 10주차 연습문제
+            String userName = member.getName(); // 세션에 저장할 사용자 이름 가져오기
             session.setAttribute("userId", sessionId); // 아이디 이름 설정
             session.setAttribute("email", email); // 이메일 설정
+            // 10주차 연습문제
+            session.setAttribute("userName", userName); // 세션에 사용자 이름 저장
 
             model.addAttribute("member", member); // 로그인 성공 시 회원 정보 전달
             return "redirect:/board_list"; // 로그인 성공 후 이동할 페이지

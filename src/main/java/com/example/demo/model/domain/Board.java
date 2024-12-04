@@ -47,6 +47,16 @@ public class Board {
         // this.author = author; // 추가구현1 - 작성자
     }
 
+    // 10주차 연습문제
+    public String getUser() {
+        return user;
+    }
+    
+    // 10주차 연습문제
+    public void setUser(String User) {
+        this.user = user;
+    }
+
     public void update(String title, String content, String user, String newdate, String count, String likec) { // 현재 객체 상태 업데이트
         this.title = title;
         this.content = content;
