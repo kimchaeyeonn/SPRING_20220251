@@ -134,9 +134,9 @@
   - 글(글 제목3)을 삭제해도 글번호에 맞게 조회됨
     <img width="1323" alt="boardlist_delete" src="https://github.com/user-attachments/assets/2ce11aa2-9992-4ad5-8fbf-e544193546f9">
 
-## 9주차 - [회원가입, 로그인 기능 구현]()
+## 9주차 - [회원가입, 로그인 기능 구현](https://github.com/kimchaeyeonn/SPRING_20220251/commit/fa3496f650e5f5b4e43e034f574a8413c303a7b9)
 
-- 9주차 수업내용
+- 9주차 수업 내용
   - 회원가입
     <img width="1297" alt="join" src="https://github.com/user-attachments/assets/94418eb7-7091-41ca-b5c0-a82d5f728b41">
     <img width="1033" alt="db" src="https://github.com/user-attachments/assets/cd767308-c324-49b3-a38f-4f239eee41dd">
@@ -144,3 +144,11 @@
     <img width="1344" alt="로그읜페이지" src="https://github.com/user-attachments/assets/372504f0-263b-4f08-be7a-96bf0d78823f">
   - 로그인 검증 확인
     <img width="1374" alt="비번 일치안함" src="https://github.com/user-attachments/assets/2aa35ac4-bb22-4e4c-bd8d-eb3bba33f923">
+
+## 9주차 연습문제 - [입력값 필터링]()
+
+- 9주차 연습문제
+    - 회원가입 했을때
+    <img width="1414" alt="회원가입" src="https://github.com/user-attachments/assets/e27cf77a-8fda-406a-8a30-12a67ff946cc">
+    - 입력값 필터링 되어서 에러 발생
+    <img width="1497" alt="에러" src="https://github.com/user-attachments/assets/a3e9203a-1a71-4c44-8322-a70cda8ef51e">

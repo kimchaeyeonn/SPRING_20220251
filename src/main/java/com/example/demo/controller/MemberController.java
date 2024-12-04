@@ -11,6 +11,9 @@ import com.example.demo.model.domain.Member;
 import com.example.demo.model.service.AddMemberRequest;
 import com.example.demo.model.service.MemberService;
 
+import jakarta.validation.Valid;
+
+
 @Controller
 public class MemberController {
     @Autowired
@@ -21,7 +24,7 @@ public class MemberController {
         return "join_new"; // .HTML 연결
     }
     @PostMapping("/api/members") // 회원 가입 저장
-    public String addmembers(@ModelAttribute AddMemberRequest request) {
+    public String addmembers(@Valid @ModelAttribute AddMemberRequest request) {
         memberService.saveMember(request);
         return "join_end"; // .HTML 연결
     }
