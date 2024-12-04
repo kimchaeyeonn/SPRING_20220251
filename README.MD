@@ -126,10 +126,21 @@
   - 검색창과 페이징 기능
     <img width="1356" alt="search" src="https://github.com/user-attachments/assets/acf742f3-9b2b-42b7-9d6b-bedd1880eaa6">
 
-## 8주차 연습문제 - [게시판 글번호 출력 수정]()
+## 8주차 연습문제 - [게시판 글번호 출력 수정](https://github.com/kimchaeyeonn/SPRING_20220251/commit/cb51fd329c36537a6116b37a4c50dfc9291da4b0)
 
 - 8주차 연습문제
   - ID를 글번호로 조회되게 변경
     <img width="1303" alt="boardlist" src="https://github.com/user-attachments/assets/41b043e0-c19d-48b6-aa90-34b27c7e10e9">
-  - 글을 삭제해도 글번호에 맞게 조회됨
+  - 글(글 제목3)을 삭제해도 글번호에 맞게 조회됨
     <img width="1323" alt="boardlist_delete" src="https://github.com/user-attachments/assets/2ce11aa2-9992-4ad5-8fbf-e544193546f9">
+
+## 9주차 - [회원가입, 로그인 기능 구현]()
+
+- 9주차 수업내용
+  - 회원가입
+    <img width="1297" alt="join" src="https://github.com/user-attachments/assets/94418eb7-7091-41ca-b5c0-a82d5f728b41">
+    <img width="1033" alt="db" src="https://github.com/user-attachments/assets/cd767308-c324-49b3-a38f-4f239eee41dd">
+  - 로그인
+    <img width="1344" alt="로그읜페이지" src="https://github.com/user-attachments/assets/372504f0-263b-4f08-be7a-96bf0d78823f">
+  - 로그인 검증 확인
+    <img width="1374" alt="비번 일치안함" src="https://github.com/user-attachments/assets/2aa35ac4-bb22-4e4c-bd8d-eb3bba33f923">
