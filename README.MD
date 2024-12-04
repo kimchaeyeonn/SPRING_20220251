@@ -186,7 +186,7 @@
     <img width="1310" alt="버튼보임" src="https://github.com/user-attachments/assets/c343feb2-2f5d-47ea-b834-08fc1ad99da5">
     <img width="1308" alt="버튼안보임" src="https://github.com/user-attachments/assets/294d850f-4c5d-40c1-aaa9-ac6873aaf0d9">
 
-## 11주차 - [게시판 마무리 및 업로드]()
+## 11주차 - [게시판 마무리 및 업로드](https://github.com/kimchaeyeonn/SPRING_20220251/commit/c203114b08a915841c1020a006bba98ed07808d4)
 
 - 11주차 수업 내용
   - 프로필 수정
@@ -199,7 +199,7 @@
   - 프로필 주소 정보 수정 (지도)
     <img width="1316" alt="지도 삽입" src="https://github.com/user-attachments/assets/33696c93-c36d-4c6c-bf8a-053c71e07bc9">
   - 깃허브 개인 포트폴리오 웹사이트 활성화
-    <img width="481" alt="깃허브 웹사이트" src="https://github.com/user-attachments/assets/e17f4cc8-a8b7-44e7-afd1-3615b8e81c6a">
+    <img width="4810" alt="깃허브 웹사이트" src="https://github.com/user-attachments/assets/e17f4cc8-a8b7-44e7-afd1-3615b8e81c6a">
 
 ## 11주차 연습문제 - []()
 
