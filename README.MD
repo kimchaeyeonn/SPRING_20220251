@@ -177,7 +177,7 @@
   - 300초 = 5분, 쿠키 https 전송 활성화
     <img width="1281" alt="세션보안 보안접속" src="https://github.com/user-attachments/assets/4107f2be-52fa-4d4d-8bec-987d43d2f2c9">
 
-## 10주차 연습문제 - [게시판 수정하기]()
+## 10주차 연습문제 - [게시판 수정하기](https://github.com/kimchaeyeonn/SPRING_20220251/commit/b447478d57da9c433ebc99d265fb6789abb1faa6)
 
 - 10주차 연습문제
   - 현재 로그인한 사용자로 작성자 저장
@@ -186,9 +186,20 @@
     <img width="1310" alt="버튼보임" src="https://github.com/user-attachments/assets/c343feb2-2f5d-47ea-b834-08fc1ad99da5">
     <img width="1308" alt="버튼안보임" src="https://github.com/user-attachments/assets/294d850f-4c5d-40c1-aaa9-ac6873aaf0d9">
 
-## 11주차 - []()
+## 11주차 - [게시판 마무리 및 업로드]()
 
 - 11주차 수업 내용
+  - 프로필 수정
+    <img width="1287" alt="프로필 수정 1" src="https://github.com/user-attachments/assets/63b1af39-df4c-4f47-9576-44d296f7da0a">
+  - 메일 업로드 기능 구현
+    <img width="754" alt="메일 입력" src="https://github.com/user-attachments/assets/c29a845d-c83f-4632-86ac-5301953d4f4b">
+    <img width="1245" alt="메일 보내짐" src="https://github.com/user-attachments/assets/565f169f-d39e-439c-bcc1-b9380089ade1">
+  - 메일 보낸 후 폴더에 txt 파일 생성됨
+    <img width="240" alt="업로드 폴더에 txt 파일" src="https://github.com/user-attachments/assets/b27aedf1-de45-44dc-850b-bc65610dcde2">
+  - 프로필 주소 정보 수정 (지도)
+    <img width="1316" alt="지도 삽입" src="https://github.com/user-attachments/assets/33696c93-c36d-4c6c-bf8a-053c71e07bc9">
+  - 깃허브 개인 포트폴리오 웹사이트 활성화
+    <img width="481" alt="깃허브 웹사이트" src="https://github.com/user-attachments/assets/e17f4cc8-a8b7-44e7-afd1-3615b8e81c6a">
 
 ## 11주차 연습문제 - []()
 
