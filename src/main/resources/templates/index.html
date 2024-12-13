@@ -41,6 +41,28 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- 추가구현 다크모드 -->
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        /* 검정 글씨를 흰색으로 전환하는 코드 */
+        .dark-mode-specific {
+            color: var(--text-color) !important;
+        }
+    </style>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
@@ -52,8 +74,6 @@
         </div>
     </div>
     <!-- Spinner End -->
-
-
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="index.html" class="navbar-brand d-block d-lg-none">
@@ -68,18 +88,40 @@
                     <a href="#about" class="nav-item nav-link">내 소개</a>
                     <a href="#skill" class="nav-item nav-link">기술 경험</a>
                 </div>
-                <a href="/board_list" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block" target="_blank">
+                    <a href="/board_list" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block" target="_blank">
                     <h1 class="text-primary fw-bold m-0">게시판</h1>
                 </a>
                 <div class="navbar-nav me-auto py-0">
                     <a href="#project" class="nav-item nav-link">프로젝트</a>
                     <a href="#team" class="nav-item nav-link">팀원</a>
                     <a href="#contact" class="nav-item nav-link">연락</a>
+                    <!-- 추가 구현 Dark Mode Toggle -->
+                    <button id="toggle-theme" class="btn btn-sm btn-outline-primary">다크 모드</button>
                 </div>
             </div>
         </nav>
     <!-- Navbar End -->
 
+    <!-- 추가구현 다크모드 JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dark Mode Toggle
+        document.getElementById("toggle-theme").addEventListener("click", () => {
+            const theme = document.body.getAttribute("data-theme");
+            if (theme === "dark") {
+                document.body.setAttribute("data-theme", "light");
+                document.getElementById("toggle-theme").textContent = "다크 모드";
+            } else {
+                document.body.setAttribute("data-theme", "dark");
+                document.getElementById("toggle-theme").textContent = "라이트 모드";
+            }
+        });
+        // 다크 모드 텍스트 업데이트 (검정 글씨를 흰색으로 변경)
+        document.querySelectorAll(".dark-mode-specific").forEach(element => {
+                element.style.color = getComputedStyle(document.body).getPropertyValue('--text-color');
+            });
+    </script>
 
     <!-- Header Start -->
     <div class="container-fluid bg-light my-6 mt-0" id="home">
@@ -136,10 +178,10 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="d-flex align-items-center mb-5">
                         <div class="years flex-shrink-0 text-center me-4">
-                            <h1 class="display-1 mb-0">4</h1>
-                            <h5 class="mb-0">Years</h5>
+                            <h1 class="display-1 dark-mode-specific mb-0">4</h1>
+                            <h5 class="dark-mode-specific mb-0">Years</h5>
                         </div>
-                        <h3 class="lh-base mb-0">"내가 가장 하고싶은/잘 하는 것, 대학교 졸업까지 XX 목표로 열심히 달려왔습니다."</h3>
+                        <h3 class="lh-base dark-mode-specific mb-0">"내가 가장 하고싶은/잘 하는 것, 대학교 졸업까지 XX 목표로 열심히 달려왔습니다."</h3>
                     </div>
                     <p class="mb-4">"저는 밤새도록 코드를 짜도 즐거운 개발자입니다. 끊임없이 새로운 것을 배우고 도전하는 것이 저의 즐거움입니다. 수
                         년 동안 갈고 닦은 저의 대표적인 장점은 다음과 같습니다"</p>
@@ -158,11 +200,11 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">개인 슬로건</h5>
+                        <h5 class="border-end dark-mode-specific pe-3 me-3 mb-0">개인 슬로건</h5>
                     </div>
                     <p class="mb-4">'작은 코드, 큰 변화'</p>
                     <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">개인 개발/학습 프로젝트(깃허브)</h5>
+                        <h5 class="border-end dark-mode-specific pe-3 me-3 mb-0">개인 개발/학습 프로젝트(깃허브)</h5>
                         <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">5</h2>
                     </div>
                     <p class="mb-0">SPRING_BOOT/C#/유니티/코딩테스트/리눅스서버</p>
@@ -178,15 +220,15 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-5">기술 & 경험</h1>
+                    <h1 class="display-5 dark-mode-specific mb-5">기술 & 경험</h1>
                     <p class="mb-4">주요 웹 사이트 개발, 리눅스 웹 서버 구축/운영을 통해서 터미널을 통한 운영체제 서버 관리 이외 다양한 프로그래밍 언어 학습, 최근에는 생성형 AI를 활용한 북리더 콘텐츠 개발에 관심을 가지고 있습니다.</p>
-                    <h3 class="mb-4">나의 기술들</h3>
+                    <h3 class="mb-4 dark-mode-specific">나의 기술들</h3>
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <div class="skill mb-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">HTML5/CSS</h6>
-                                    <h6 class="font-weight-bold">95%</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">HTML5/CSS</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">95%</h6>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
@@ -194,8 +236,8 @@
                             </div>
                             <div class="skill mb-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">파이썬</h6>
-                                    <h6 class="font-weight-bold">95%</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">파이썬</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">95%</h6>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
@@ -203,8 +245,8 @@
                             </div>
                             <div class="skill mb-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">SPRING BOOT</h6>
-                                    <h6 class="font-weight-bold">85%</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">SPRING BOOT</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">85%</h6>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
@@ -214,8 +256,8 @@
                         <div class="col-md-6">
                             <div class="skill mb-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">자바 스크립트</h6>
-                                    <h6 class="font-weight-bold">80%</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">자바 스크립트</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">80%</h6>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
@@ -223,19 +265,19 @@
                             </div>
                             <div class="skill mb-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Bootstrap</h6>
-                                    <h6 class="font-weight-bold">95%</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">Bootstrap</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">95%</h6>
                                 </div>
                                 <div class="progress">
-                                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                             <div class="skill mb-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">React</h6>
-                                    <h6 class="font-weight-bold">85%</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">React</h6>
+                                    <h6 class="font-weight-bold dark-mode-specific">85%</h6>
                                 </div>
-                                <div class="progress">
+                                <div class="progress"> 
                                     <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
@@ -248,7 +290,7 @@
                             <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">경험</button>
                         </li>
                         <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">교육</button>
+                            <button class="nav-link dark-mode-specific w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">교육</button>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -258,25 +300,25 @@
                                     <h5>해커톤 2024</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2024</p>
-                                    <h6 class="mb-0">멋쟁이사자처럼</h6>
+                                    <h6 class="dark-mode-specific mb-0">멋쟁이사자처럼</h6>
                                 </div>
                                 <div class="col-sm-6">
                                     <h5>아이디어톤 2024</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2024</p>
-                                    <h6 class="mb-0">멋쟁이사자처럼</h6>
+                                    <h6 class="dark-mode-specific mb-0">멋쟁이사자처럼</h6>
                                 </div>
                                 <div class="col-sm-6">
                                     <h5>물류메타버스앱</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2025</p>
-                                    <h6 class="mb-0">성결대학교</h6>
+                                    <h6 class="dark-mode-specific mb-0">성결대학교</h6>
                                 </div>
                                 <div class="col-sm-6">
                                     <h5>물류메타버스 관련 논문</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2025</p>
-                                    <h6 class="mb-0">성결대학교</h6>
+                                    <h6 class="dark-mode-specific mb-0">성결대학교</h6>
                                 </div>
                             </div>
                         </div>
@@ -286,13 +328,13 @@
                                     <h5>TOEIC</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2025</p>
-                                    <h6 class="mb-0">TOEIC</h6>
+                                    <h6 class="dark-mode-specific mb-0">TOEIC</h6>
                                 </div>
                                 <div class="col-sm-6">
                                     <h5>정보처리기사</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2026</p>
-                                    <h6 class="mb-0">국가공인자격증</h6>
+                                    <h6 class="dark-mode-specific mb-0">국가공인자격증</h6>
                                 </div>
                             </div>
                         </div>
@@ -375,7 +417,7 @@
         <div class="container">
             <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">나의 프로젝트</h1>
+                    <h1 class="display-5 dark-mode-specific mb-0">나의 프로젝트</h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
                     <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
@@ -451,7 +493,7 @@
         <div class="container">
             <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">프로젝트 팀원들</h1>
+                    <h1 class="dark-mode-specific mb-5">프로젝트 팀원들</h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
                     <a class="btn btn-primary py-3 px-5" href="mailto:cycy0522@sungkyul.ac.kr">직접 연락하기</a>
@@ -570,21 +612,21 @@
         <div class="container py-5">
             <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-12">
-                    <h1 class="display-5 mb-0">함께 일하실 분을 찾습니다.(구직 희망!)</h1>
+                    <h1 class="display-5 dark-mode-specific mb-0">함께 일하실 분을 찾습니다.(구직 희망!)</h1>
                 </div>
             </div>
             <div class="row g-5">
                 <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="mb-2">선호 지역: 수도권</p>
-                    <h3 class="fw-bold">대한민국, 서울시</h3>
+                    <p class="dark-mode-specific mb-2">선호 지역: 수도권</p>
+                    <h3 class="dark-mode-specific fw-bold">대한민국, 서울시</h3>
                     <hr class="w-100">
-                    <p class="mb-2">연락처:</p>
-                    <h3 class="fw-bold">비 공 개(메일확인)</h3>
+                    <p class="dark-mode-specific mb-2">연락처:</p>
+                    <h3 class="dark-mode-specific fw-bold">비 공 개(메일확인)</h3>
                     <hr class="w-100">
-                    <p class="mb-2">이메일 주소:</p>
-                    <h3 class="fw-bold">cycy0522@sungkyul.ac.kr</h3>
+                    <p class="dark-mode-specific mb-2">이메일 주소:</p>
+                    <h3 class="dark-mode-specific fw-bold">cycy0522@sungkyul.ac.kr</h3>
                     <hr class="w-100">
-                    <p class="mb-2">개인 SNS 계정:</p>
+                    <p class="dark-mode-specific mb-2">개인 SNS 계정:</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>

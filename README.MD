@@ -212,3 +212,10 @@
     <img width="331" alt="동일파일 업로드시에 다른 이름으로 업로드" src="https://github.com/user-attachments/assets/64534ae9-25ae-490c-9909-3b0756341066">
   - 파일 업로드 에러 페이지 처리
     <img width="763" alt="에러페이지" src="https://github.com/user-attachments/assets/b739aa69-1c87-401d-aa06-d0a6654176de">
+
+## 기말범위 추가 구현사항 - [게시판, 포트폴리오 css 수정]()
+
+- board_list, board_view, board_write.html의 css 수정 (폰트, 컬러, 마우스를 올리면 hover 효과로 행 강조, 페이지네이션 버튼 스타일개선)
+  <img width="1200" src="https://github.com/user-attachments/assets/8871233e-3f9d-4836-88d1-e811b73f7891">
+- 포트폴리오 페이지 다크모드/라이트모드 설정
+  <img width="1200" src="https://github.com/user-attachments/assets/1548cb7d-fe76-4011-85f4-ea35b66443e6">
