@@ -201,13 +201,13 @@
   - 깃허브 개인 포트폴리오 웹사이트 활성화
     <img width="4810" alt="깃허브 웹사이트" src="https://github.com/user-attachments/assets/e17f4cc8-a8b7-44e7-afd1-3615b8e81c6a">
 
-## 11주차 연습문제 - [세션처리, 파일 업로드]()
+## 11주차 연습문제 - [세션처리, 파일 업로드](https://github.com/kimchaeyeonn/SPRING_20220251/commit/183658f5a615c0df5c57c74f3770a1f51989caf1)
 
 - 11주차 연습문제
   - 다중 로그인 처리
     <img width="1488" alt="다중로그인" src="https://github.com/user-attachments/assets/54932d9a-fca8-44cf-a542-f718975d664e">
   - 로그아웃 시 현재 사용자의 세션과 쿠키만 삭제
-    <img width="1200" src="https://github.com/user-attachments/assets/fde556f7-2b0a-4368-a4a9-40112e7abbc3)">
+    <img width="1200" src="https://github.com/user-attachments/assets/fde556f7-2b0a-4368-a4a9-40112e7abbc3">
   - 동일 파일 업로드 시에 다른 이름으로 업로드 (업로한 시간을 업로드 이름으로 설정)
     <img width="331" alt="동일파일 업로드시에 다른 이름으로 업로드" src="https://github.com/user-attachments/assets/64534ae9-25ae-490c-9909-3b0756341066">
   - 파일 업로드 에러 페이지 처리
