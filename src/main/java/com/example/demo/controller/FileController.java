@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Controller
 public class FileController {
@@ -34,8 +36,13 @@ public class FileController {
 
             // 이메일에서 특수문자 제거 후 파일명 설정
             String sanitizedEmail = email.replaceAll("[^a-zA-Z0-9]", "_");
-            Path filePath = uploadPath.resolve(sanitizedEmail + ".txt"); // 업로드 폴더에 .txt 이름 설정
+            // Path filePath = uploadPath.resolve(sanitizedEmail + ".txt"); // 업로드 폴더에 .txt 이름 설정
+            // 11주차 연습문제 - 동일 파일 업로드 시에 다른 이름으로 업로드
+            LocalDateTime now = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+            String timestamp = now.format(formatter);
 
+            Path filePath = uploadPath.resolve(sanitizedEmail + "_" + timestamp + ".txt");
             System.out.println("File path: " + filePath); // 디버깅용 출력
 
             // 텍스트 파일에 내용 작성
@@ -55,8 +62,15 @@ public class FileController {
             // 오류 발생 시 메시지 추가
             redirectAttributes.addFlashAttribute("message", "업로드 중 오류가 발생했습니다.");
             return "/error_page/article_error"; // 오류 처리 페이지로 연결
+        } // 11주차 연습문제 - 파일 업로드 에러 페이지 설정
+        catch (Exception e) {
+            e.printStackTrace();
+            // 예기치 않은 오류 처리
+            redirectAttributes.addFlashAttribute("message", "예기치 않은 오류가 발생했습니다.");
+            return "redirect:/error_page/article_error"; // 오류 처리 페이지로 리다이렉트
         }
 
         return "upload_end"; // .html 파일 연동
     }
+
 }

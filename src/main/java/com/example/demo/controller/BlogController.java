@@ -50,21 +50,38 @@ public class BlogController {
 
     @GetMapping("/board_view/{id}") // 게시판 링크 지정
     public String board_view(Model model, @PathVariable Long id, HttpSession session) {
-        Optional<Board> list = blogService.findById(id); // 선택한 게시판 글
+        try {
+            // 게시글 조회
+            Optional<Board> list = blogService.findById(id); // 선택한 게시판 글
 
-        if (list.isPresent()) {
-            Board board = list.get();
-            model.addAttribute("boards", board); // 존재할 경우 실제 Article 객체를 모델에 추가
+            if (list.isPresent()) {
+                Board board = list.get();
+                model.addAttribute("boards", board); // 게시글 데이터 모델에 추가
 
-            // 10주차 연습문제
-            String userId = (String) session.getAttribute("userId"); // 로그인된 사용자 아이디
-            model.addAttribute("canEdit", userId != null && userId.equals(board.getUser())); // 작성자만 수정 가능
-            model.addAttribute("canDelete", userId != null && userId.equals(board.getUser())); // 작성자만 삭제 가능
-        } else {
-            // 처리할 로직 추가 (예: 오류 페이지로 리다이렉트, 예외 처리 등)
+                // 10주차 연습문제 - 세션에서 로그인된 사용자 아이디 가져오기
+                String userName = (String) session.getAttribute("userName");
+
+                // 10주차 연습문제 - 작성자만 수정 및 삭제 가능
+                if (userName != null && userName.equals(board.getUser())) {
+                    model.addAttribute("canEdit", true);  // 작성자만 수정 가능
+                    model.addAttribute("canDelete", true); // 작성자만 삭제 가능
+                } else {
+                    // 11주차 연습문제
+                    model.addAttribute("canEdit", false);  // 다른 사용자는 수정 불가
+                    model.addAttribute("canDelete", false); // 다른 사용자는 삭제 불가
+                }
+            } else {
+                model.addAttribute("error", "게시글을 찾을 수 없습니다.");
+                return "/error_page/article_error"; // 오류 처리 페이지로 연결
+            }
+
+            return "board_view"; // 게시글 상세보기 페이지로 이동
+        } catch (Exception e) {
+            // 11주차 연습문제
+            e.printStackTrace();
+            model.addAttribute("error", "오류가 발생했습니다: " + e.getMessage());
             return "/error_page/article_error"; // 오류 처리 페이지로 연결
         }
-        return "board_view"; // .HTML 연결
     }
 
     // 7주차 연습문제
@@ -151,45 +168,39 @@ public class BlogController {
     //     model.addAttribute("keyword", keyword); // 키워드
     //     return "board_list"; // .HTML 연결
     // }
-
-    @GetMapping("/board_list") // 새로운 게시판 링크 지정
-    public String board_list(
-        Model model,
-        @RequestParam(defaultValue = "0") int page,
-        @RequestParam(defaultValue = "") String keyword,
-        HttpSession session) { // 세션 객체 전달
-        
-            String userId = (String) session.getAttribute("userId"); // 세션 아이디 존재 확인
-            String email = (String) session.getAttribute("email"); // 세션에서 이메일 확인
-
-            if (userId == null) {
-                return "redirect:/member_login"; // 로그인 페이지로 리다이렉션
-            }
-            System.out.println("세션 userId: " + userId); // 서버 IDE 터미널에 세션 값 출력
-            
-            int pageSize = 3; // 페이지당 게시글 수
-            PageRequest pageable = PageRequest.of(page, pageSize);
-            Page < Board > list;
-
-            if (keyword.isEmpty()) {
-                list = blogService.findAll(pageable);
-            } else {
-                list = blogService.searchByKeyword(keyword, pageable);
-            }
-            // 8주차 연습문제 - 시작 번호 계산
-            int startNum = (page * pageSize) + 1;
-
-            model.addAttribute("boards", list);
-            model.addAttribute("totalPages", list.getTotalPages());
-            model.addAttribute("currentPage", page);
-            model.addAttribute("keyword", keyword);
-            model.addAttribute("startNum", startNum); // 추가된 부분
-            model.addAttribute("email", email); // 로그인 사용자(이메일)
-
-            return "board_list";
+    @GetMapping("/board_list")
+    public String boardList(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "") String keyword,
+            HttpSession session,
+            // 11주차 연습문제
+            Model model) {
+        // 세션 유효성 확인
+        if (session == null || session.getAttribute("userId") == null) {
+            return "redirect:/member_login"; // 세션이 없으면 로그인 페이지로 이동
         }
-
-
+    
+        // 세션에서 사용자 정보 가져오기
+        String userName = (String) session.getAttribute("userName");
+        String email = (String) session.getAttribute("email");
+        model.addAttribute("userName", userName);
+        model.addAttribute("email", email);
+    
+        // 8주차 연습문제 - 게시판 데이터 처리(시작 번호 계산)
+        int pageSize = 5;
+        PageRequest pageable = PageRequest.of(page, pageSize);
+        Page<Board> boards = keyword.isEmpty()
+                ? blogService.findAll(pageable)
+                : blogService.searchByKeyword(keyword, pageable);
+    
+        model.addAttribute("boards", boards);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", boards.getTotalPages());
+        model.addAttribute("keyword", keyword);
+    
+        return "board_list"; // `board_list.html` 템플릿 반환
+    }
+    
     // 게시판 리스트를 처리하는 메소드
     // @GetMapping("/article_list") // 게시판 링크 지정
     // public String articleList(Model model) {
